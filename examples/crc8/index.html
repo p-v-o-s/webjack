@@ -72,9 +72,13 @@
 	var checksum_input= res[1];
 
         // convert msg into array of bytes and then calculate checksum from it
+//var msg = 'hello';
+
   	var msg_byte_array = msg.split('').map(function(x){return x.charCodeAt(0)})
 	var crc8 = new CRC8()
 	var checksum = crc8.checksum(msg_byte_array)
+
+	console.log('checksum: ' + checksum);
 
         log.append(data);
 	log.append(" msg:");
@@ -96,7 +100,7 @@
 
 
 
-        console.log('Arduino to WebJack: ' + data);
+        //console.log('Arduino to WebJack: ' + data);
 
 
       });
